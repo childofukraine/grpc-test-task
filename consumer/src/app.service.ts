@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  OnApplicationBootstrap,
-  OnModuleInit,
-} from '@nestjs/common';
+import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { Inject } from '@nestjs/common';
 import { firstValueFrom, Observable } from 'rxjs';
@@ -25,7 +21,7 @@ export class AppService implements OnApplicationBootstrap {
 
   onApplicationBootstrap() {
     this.userService = this.client.getService<UserService>('UserService');
-    this.logFilteredUsers(); // Вызываем после полной инициализации
+    this.logFilteredUsers();
   }
 
   async logFilteredUsers() {
