@@ -14,7 +14,7 @@ export class UserService {
   private users: User[];
 
   constructor() {
-    const filePath = path.join(__dirname, '..', 'data/users.json');
+    const filePath = path.join(__dirname, 'data', 'users.json');
     this.users = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   }
 
