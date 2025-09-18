@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  producer:
+    build: ./producer
+    container_name: producer
+    ports:
+      - '50051:50051'
+
+  consumer:
+    build: ./consumer
+    container_name: consumer
+    depends_on:
+      - producer
